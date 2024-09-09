@@ -6,8 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+
 import com.example.demo.repository.entity.BuildingEntity;
 
+@PropertySource("classpath:application.properties")
 public class ConnectionUntil {
 	private static final String hostName = "localhost:3306";
 	private static final String dbName = "estatebasic";

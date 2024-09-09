@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +25,7 @@ import com.example.demo.repository.Imp.BuildingRepositoryImpl;
 import com.example.demo.repository.entity.DistrictEntity;
 
 @RestController
+@PropertySource("classpath:application.properties")
 public class testAPi {
 	private String hostName = "localhost:3306";
 	private String dbName = "estatebasic";
@@ -34,6 +38,9 @@ public class testAPi {
 	@Autowired
 	private DistrictRepository districtRepository; 
 	//private BuldingServiceImpl buldingServiceImpl = new BuldingServiceImpl();
+	
+	@Value("${dev.nguyen}")
+	private String data;
 	@GetMapping("TestSql")
 	public List<BuildingDTO> connect(@RequestParam Map<String,Object> params,@RequestParam(name = "typeCode", required = false) List<String> typeCode) {
 	//List<BuildingDTO> result =buldingService.findAll(name);
@@ -43,10 +50,9 @@ public class testAPi {
 		return 	result; 
 	}
 	@GetMapping("TestSql123")
-	public DistrictEntity connect123(@RequestParam Long id) {
+	public void connect123(@RequestParam Long id) {
 	//List<BuildingDTO> result =buldingService.findAll(name);
-		System.out.println("124124");
-		DistrictEntity dis = districtRepository.findNameById(id);
-		return 	dis; 
+		System.out.println(data);
+	
 	}
 }

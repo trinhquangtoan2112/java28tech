@@ -41,8 +41,8 @@ public class BuildingRepositoryImpl implements BuildingRepository {
 			sql.append("  INNER JOIN renttype ON renttype.id =buildingrenttype.renttypeid ");
 		}
 
-		String rentAreaTo = buildingSearchBuilder.getRentareato().toString();
-		String rentAreaFrom = buildingSearchBuilder.getRentareafrom().toString();
+		String rentAreaTo = buildingSearchBuilder.getRentareato()  !=null ?buildingSearchBuilder.getRentareato().toString() :null ;
+		String rentAreaFrom = buildingSearchBuilder.getRentareafrom() !=null ?buildingSearchBuilder.getRentareafrom().toString():null;
 		if (rentAreaTo != null || rentAreaFrom != null) {
 			sql.append(" INNER JOIN rentarea ON rentarea.buildingid = b.id ");
 		}
@@ -86,8 +86,8 @@ public class BuildingRepositoryImpl implements BuildingRepository {
 		if (staffID != null) {
 			where.append(" AND assignmentbuilding.staffid =  " + staffID);
 		}
-		String rentAreaTo = buildingSearchBuilder.getRentareato().toString();
-		String rentAreaFrom = buildingSearchBuilder.getRentareafrom().toString();
+		String rentAreaTo =  buildingSearchBuilder.getRentareato()  !=null ?buildingSearchBuilder.getRentareato().toString() :null ;;
+		String rentAreaFrom = buildingSearchBuilder.getRentareafrom() !=null ?buildingSearchBuilder.getRentareafrom().toString():null;
 		if (rentAreaTo != null || rentAreaFrom != null) {
 			where.append(" AND EXISTS (SELECT * FROM rentarea r where b.id =r.buildingid ");
 
