@@ -14,12 +14,12 @@ import com.example.demo.repository.entity.BuildingEntity;
 @PropertySource("classpath:application.properties")
 public class ConnectionUntil {
 	private static final String hostName = "localhost:3306";
-	private static final String dbName = "estatebasic";
+	private static final String dbName = "jpatest123";
 	private static final String username = "root";
 	private static final String password = "#Quangtoan2112";
 	private static final String connectionURL = "jdbc:mysql://" + hostName + "/" + dbName;
 	
-	
+	 
 	public static Connection getConnection() {
 		Connection conn =null;
 		try {

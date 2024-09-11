@@ -23,7 +23,7 @@ import com.example.demo.builder.BuildingSearchBuilder;
 import com.example.demo.repository.BuildingRepository;
 
 @Repository
-public class BuildingRepositoryImpl implements BuildingRepository {
+public class JDBCBuildingRepositoryImpl implements BuildingRepository {
 	private String hostName = "localhost:3306";
 	private String dbName = "estatebasic";
 	private String username = "root";
@@ -144,7 +144,7 @@ public class BuildingRepositoryImpl implements BuildingRepository {
 				ketqua.setId(rs.getInt("id"));
 				ketqua.setName(rs.getString("b.name"));
 				ketqua.setWard(rs.getString("b.ward"));
-				ketqua.setDistrictid(rs.getLong("b.districtid"));
+//				ketqua.setDistrictid(rs.getLong("b.districtid"));
 				ketqua.setStreet(rs.getString("b.street"));
 				ketqua.setFloorarea(rs.getLong("b.floorarea"));
 				ketqua.setRentprice(rs.getLong("b.rentprice"));

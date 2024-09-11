@@ -21,7 +21,7 @@ import com.example.demo.Model.BuildingDTO;
 import com.example.demo.Service.BuildingService;
 import com.example.demo.Service.Impl.BuldingServiceImpl;
 import com.example.demo.repository.DistrictRepository;
-import com.example.demo.repository.Imp.BuildingRepositoryImpl;
+import com.example.demo.repository.Imp.JDBCBuildingRepositoryImpl;
 import com.example.demo.repository.entity.DistrictEntity;
 
 @RestController

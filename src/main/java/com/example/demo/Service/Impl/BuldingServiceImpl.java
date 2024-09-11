@@ -17,7 +17,7 @@ import com.example.demo.converter.BuildingSearchBuilderConverter;
 import com.example.demo.repository.BuildingRepository;
 import com.example.demo.repository.DistrictRepository;
 import com.example.demo.repository.RentAreaRepository;
-import com.example.demo.repository.Imp.BuildingRepositoryImpl;
+import com.example.demo.repository.Imp.JDBCBuildingRepositoryImpl;
 import com.example.demo.repository.entity.BuildingEntity;
 import com.example.demo.repository.entity.DistrictEntity;
 import com.example.demo.repository.entity.RentAreaEntity;
